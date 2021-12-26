@@ -1,0 +1,43 @@
+{
+  "name": "cookbook-server",
+  "version": "1.0.0",
+  "description": "Node, Express and Typescript api rest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "start": "node build/app.js",
+    "dev": "ts-node-dev src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryanAguilar001/cookbook-server.git"
+  },
+  "author": "Bryan Aguilar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bryanAguilar001/cookbook-server/issues"
+  },
+  "homepage": "https://github.com/bryanAguilar001/cookbook-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^6.14.0",
+    "lodash": "^4.17.21",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/lodash": "^4.14.178",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.2",
+    "eslint": "^8.5.0",
+    "morgan": "^1.10.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.4"
+  }
+}
