@@ -44,9 +44,9 @@ export const get = () => {
     app.use(`${API_PREFIX}`, routes)
 
     // Not found
-    app.all('*', async (req, res) => {
-        throw new RouteNotFoundError();
-    });
+    // app.all('*', async (req, res) => {
+    //     throw new RouteNotFoundError();
+    // });
 
     // Error Handler
     app.use(errorHandler);

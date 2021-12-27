@@ -37,7 +37,7 @@ class Ingredient extends Model<IngredientAttributes, IngredientInput> implements
 
 Ingredient.init({
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },
@@ -54,7 +54,8 @@ Ingredient.init({
         type: DataTypes.TEXT
     },
     foodGroup: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        field: 'food_group'
     }
 }, {
     tableName: "tc_ingredients",

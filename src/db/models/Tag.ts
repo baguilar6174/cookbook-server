@@ -27,7 +27,7 @@ class Tag extends Model<TagAttributes, TagInput> implements TagAttributes {
 
 Tag.init({
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },

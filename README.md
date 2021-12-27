@@ -1,0 +1,1 @@
+# Server with Typescript & Sequelize & Node

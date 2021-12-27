@@ -28,19 +28,23 @@ class RecipeIngredient extends Model<RecipeIngredientAttributes, RecipeIngredien
 
 RecipeIngredient.init({
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },
     RecipeId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
+        field: 'recipe_id',
+        allowNull: false,
         references: {
             model: Recipe,
             key: 'id'
         }
     },
     IngredientId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
+        field: 'ingredient_id',
+        allowNull: false,
         references: {
             model: Ingredient,
             key: 'id'
@@ -50,14 +54,17 @@ RecipeIngredient.init({
     tableName: "tc_recipe_ingredient",
     sequelize: sequelizeConnection,
     paranoid: false,
+    timestamps: false,
 });
 
 Recipe.belongsToMany(Ingredient, {
-    through: RecipeIngredient
+    through: RecipeIngredient,
+    foreignKey: 'id'
 });
 
 Ingredient.belongsToMany(Recipe, {
-    through: RecipeIngredient
+    through: RecipeIngredient,
+    foreignKey: 'id'
 });
 
 export default RecipeIngredient;

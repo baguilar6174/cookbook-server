@@ -28,19 +28,21 @@ class RecipeTag extends Model<RecipeTagAttribtues, RecipeTagInput> implements Re
 
 RecipeTag.init({
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },
     RecipeId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
+        field: 'recipe_id',
         references: {
             model: Recipe,
             key: 'id'
         }
     },
     TagId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
+        field: 'tag_id',
         references: {
             model: Tag,
             key: 'id'

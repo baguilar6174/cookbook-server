@@ -36,7 +36,7 @@ class Review extends Model<ReviewAttributes, ReviewInput> implements ReviewAttri
 
 Review.init({
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },
@@ -53,13 +53,15 @@ Review.init({
     },
     isPublished: {
         type: DataTypes.BOOLEAN,
-        defaultValue: false
+        defaultValue: false,
+        field: 'is_published',
     },
     publishedOn: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        field: 'published_on',
     },
     rating: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
         allowNull: false
     }
 }, {

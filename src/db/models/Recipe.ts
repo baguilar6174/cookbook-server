@@ -42,7 +42,7 @@ class Recipe extends Model<RecipeAttributes, RecipeInput> implements RecipeAttri
 
 Recipe.init({
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.BIGINT,
         autoIncrement: true,
         primaryKey: true,
     },
