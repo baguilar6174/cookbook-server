@@ -57,14 +57,14 @@ RecipeIngredient.init({
     timestamps: false,
 });
 
-Recipe.belongsToMany(Ingredient, {
-    through: RecipeIngredient,
-    foreignKey: 'id'
-});
+// Recipe.belongsToMany(Ingredient, {
+//     through: RecipeIngredient,
+//     foreignKey: 'id'
+// });
 
-Ingredient.belongsToMany(Recipe, {
-    through: RecipeIngredient,
-    foreignKey: 'id'
-});
+// Ingredient.belongsToMany(Recipe, {
+//     through: RecipeIngredient,
+//     foreignKey: 'id'
+// });
 
 export default RecipeIngredient;

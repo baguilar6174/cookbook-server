@@ -59,7 +59,7 @@ Ingredient.init({
     }
 }, {
     tableName: "tc_ingredients",
-    timestamps: true,
+    timestamps: false,
     sequelize: sequelizeConnection,
     paranoid: false,
 })

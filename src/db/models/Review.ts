@@ -10,6 +10,7 @@ interface ReviewAttributes {
     isPublished: boolean;
     publishedOn: Date | null;
     rating: number;
+    RecipeId: number;
     createdAt?: Date;
     updatedAt?: Date;
     deletedAt?: Date;
@@ -27,6 +28,7 @@ class Review extends Model<ReviewAttributes, ReviewInput> implements ReviewAttri
     public isPublished!: false;
     public publishedOn!: Date;
     public rating!: number;
+    public RecipeId!: number;
 
     // timestamps!
     public readonly createdAt!: Date;
@@ -63,18 +65,27 @@ Review.init({
     rating: {
         type: DataTypes.BIGINT,
         allowNull: false
-    }
+    },
+    RecipeId: {
+        type: DataTypes.BIGINT,
+        field: 'recipe_id',
+        allowNull: false,
+        references: {
+            model: Recipe,
+            key: 'id'
+        }
+    },
 }, {
     tableName: "tc_review",
     paranoid: false,
-    timestamps: true,
+    timestamps: false,
     sequelize: sequelizeConnection
 });
 
-Review.belongsTo(Recipe, {
-    foreignKey: {
-        allowNull: false
-    }
-});
+// Review.belongsTo(Recipe, {
+//     foreignKey: {
+//         allowNull: false,
+//     }
+// });
 
 export default Review;

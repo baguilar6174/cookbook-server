@@ -66,7 +66,7 @@ Recipe.init({
     }
 }, {
     tableName: "tc_recipes",
-    timestamps: true,
+    timestamps: false,
     sequelize: sequelizeConnection,
     paranoid: false,
 })

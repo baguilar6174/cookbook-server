@@ -43,7 +43,8 @@ Tag.init({
 }, {
     tableName: "tc_tag",
     sequelize: sequelizeConnection,
-    paranoid: false
+    paranoid: false,
+    timestamps: false
 })
 
 export default Tag;

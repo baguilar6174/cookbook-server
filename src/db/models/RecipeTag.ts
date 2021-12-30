@@ -35,6 +35,7 @@ RecipeTag.init({
     RecipeId: {
         type: DataTypes.BIGINT,
         field: 'recipe_id',
+        allowNull: false,
         references: {
             model: Recipe,
             key: 'id'
@@ -43,6 +44,7 @@ RecipeTag.init({
     TagId: {
         type: DataTypes.BIGINT,
         field: 'tag_id',
+        allowNull: false,
         references: {
             model: Tag,
             key: 'id'
@@ -51,15 +53,17 @@ RecipeTag.init({
 }, {
     tableName: "tc_recipe_tag",
     sequelize: sequelizeConnection,
-    paranoid: false
+    paranoid: false,
+    timestamps: false
 });
 
-Tag.belongsToMany(Recipe, {
-    through: RecipeTag
-})
+// Tag.belongsToMany(Recipe, {
+//     through: RecipeTag,
+//     foreignKey: 'id'
+// })
 
-Recipe.belongsToMany(Tag, {
-    through: RecipeTag
-});
+// Recipe.belongsToMany(Tag, {
+//     through: RecipeTag
+// });
 
 export default RecipeTag;
